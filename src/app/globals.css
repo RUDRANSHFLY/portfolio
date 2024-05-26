@@ -4,6 +4,26 @@
 
 
 
+
+  *{
+    margin: 0%;
+    padding: 0%;
+  }
+
+
+  @layer components{
+    .heroButton{
+      @apply px-6 py-2 border border-[#242424] rounded-full uppercase tracking-widest text-sm transition-all 
+    }
+    .heroButton:hover{
+      @apply text-[#F7AB0A]/40 border-[#F7AB0A]/40 
+    }
+
+    .heroTitle{
+      @apply absolute top-32 tracking-widest  sm:tracking-[20px] text-white sm:text-gray-500 text-2xl uppercase mx-auto
+    }
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
