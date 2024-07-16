@@ -11,9 +11,9 @@ type Props = {};
 
 const NavBar = ({}: Props) => {
   return (
-    <header id="header" className="sticky p-5 top-0 z-50">
+    <header id="header" className="sticky top-0 z-50 pt-12 p-5">
       <MaxWidthWrapper className="flex justify-center sm:block">
-        <div 
+        <div
           id="mainNav"
           className={"flex items-center justify-between align-baseline"}
         >
