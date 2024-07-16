@@ -8,7 +8,6 @@ import NavBar from "@/components/nav/NavBar";
 import Skils from "@/components/skills/Skils";
 
 export default function Home() {
-  console.log(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
   return (
     <div
       className={
