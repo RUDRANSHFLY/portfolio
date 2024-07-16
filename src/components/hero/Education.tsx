@@ -9,11 +9,11 @@ const Education = () => {
     <MaxWidthWrapper>
       <div
         className={
-          "h-screen relative overflow-hidden flex flex-col justify-evenly items-center text-left md:flex-row maz-w-full px-10 mx-auto "
+          "h-screen relative flex flex-col justify-evenly items-center text-left md:flex-row max-w-full px-10 mx-auto"
         }
       >
         <h3 className={"heroTitle"}>Education</h3>
-        <div className=" absolute top-60 w-full h-full px-5 flex space-x-5 snap-x snap-mandatory overflow-x-scroll overflow-y-hidden">
+        <div className="absolute top-48 w-full p-10 flex space-x-5 snap-x snap-mandatory overflow-x-scroll overflow-y-hidden  scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-500 ">
           <EducationCard />
           <EducationCard />
           <EducationCard />
