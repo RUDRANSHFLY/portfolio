@@ -49,13 +49,25 @@ const Hero = () => {
         <div className="z-20">
           <div>
             <Link href={"#about"}>
-              <button className={"heroButton"}>About</button>
+              <button type={"button"} className={"heroButton"}>
+                About
+              </button>
             </Link>
             <Link href={"#education"}>
-              <button className={"heroButton"}>Education</button>
+              <button type={"button"} className={"heroButton"}>
+                Education
+              </button>
             </Link>
-            <button className={"heroButton"}>Skills</button>
-            <button className={"heroButton"}>Projects</button>
+            <Link href={"#skills"}>
+              <button type={"button"} className={"heroButton"}>
+                Skills
+              </button>
+            </Link>
+            <Link href={"#projects"}>
+              <button type={"button"} className={"heroButton"}>
+                Projects
+              </button>
+            </Link>
           </div>
         </div>
       </div>
