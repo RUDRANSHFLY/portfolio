@@ -7,7 +7,7 @@ import React from "react";
 
 const Skils = () => {
   return (
-    <MaxWidthWrapper className=" overflow-y-hidden">
+    <MaxWidthWrapper className="overflow-y-hidden">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
