@@ -4,7 +4,7 @@ import MaxWidthWrapper from "@/helper/ui/MaxWidthWrapper";
 import React from "react";
 import EducationCard from "../cards/EducationCard";
 
-const Education = () => {
+const HellaEducation = () => {
   return (
     <MaxWidthWrapper>
       <div
@@ -25,4 +25,4 @@ const Education = () => {
   );
 };
 
-export default Education;
+export default HellaEducation;
