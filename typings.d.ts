@@ -7,7 +7,7 @@ interface SanityBody {
 
 interface Image {
   _type: "image";
-  assest: {
+  asset: {
     _ref: string;
     _type: "reference";
   };
@@ -19,9 +19,8 @@ interface PageInfo extends SanityBody {
   backgroundInformation: string;
   email: string;
   role: string;
-  heroImage: string;
+  heroImage: Image;
   phoneNumber: string;
-  profilePic: string;
 }
 
 interface Technology extends SanityBody {
