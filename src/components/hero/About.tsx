@@ -4,8 +4,14 @@ import MaxWidthWrapper from "@/helper/ui/MaxWidthWrapper";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { PageInfo } from "../../../typings";
+import { urlFor } from "../../../sanity";
 
-const About = () => {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+const About = ({ pageInfo }: Props) => {
   return (
     <MaxWidthWrapper>
       <motion.div
@@ -38,7 +44,7 @@ const About = () => {
           className="w-48 h-48 sm:w-56 sm:h-56 mt-28 md:mt-0 relative flex-shrink-0 md:w-64 md:h-64 lg:w-[400px] lg:h-[400px]"
         >
           <Image
-            src={"/hela.jpg"}
+            src={urlFor(pageInfo?.heroImage).url()}
             fill
             alt={"profile-pic"}
             sizes={"100vw,100vh"}
@@ -52,11 +58,7 @@ const About = () => {
             BackGround
           </h4>
           <p className="text-xs text-balance sm:text-sm md:text-base lg:text-2xl">
-            I'm Rudransh Ahir , code name : ghost_01 👻 from 🇮🇳 India Asia mine
-            wanted to explore the TECH spcially Development Field and Cyber
-            Security Right now Digging down into the Web 🌐 Development and also
-            a ⛅ Environmentalist and love towards nature 🍀 and have hobby to
-            watch 🎥 movie and series 🍿
+            {pageInfo.backgroundInformation}
             <br />
             <span className="font-bold text-center tracking-widest text-amber-400">
               return 0
