@@ -1,15 +1,18 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SocialIcon } from "react-social-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import MaxWidthWrapper from "@/helper/ui/MaxWidthWrapper";
 import { motion } from "framer-motion";
+import { Social } from "../../../typings";
 
-type Props = {};
+type Props = {
+  socials: Social[];
+};
 
-const NavBar = ({}: Props) => {
+const NavBar = ({ socials }: Props) => {
   return (
     <header id="header" className="sticky top-0 z-50 pt-12 p-5">
       <MaxWidthWrapper className="flex justify-center sm:block">
@@ -34,10 +37,13 @@ const NavBar = ({}: Props) => {
               duration: 1.5,
             }}
           >
-            <SocialIcon url={"https://twitter.com/ghost_coder01"} />
+            {/* <SocialIcon url={"https://twitter.com/ghost_coder01"} />
             <SocialIcon url={"https://www.instagram.com/ghost_coder01/"} />
             <SocialIcon url={"https://github.com/RUDRANSHFLY"} />
-            <SocialIcon url={"https://discord.com/channels/@tornedo."} />
+            <SocialIcon url={"https://discord.com/channels/@tornedo."} /> */}
+            {socials?.map((social) => (
+              <SocialIcon url={social.url} key={social.title} id={social._id} />
+            ))}
           </motion.div>
 
           <motion.div
