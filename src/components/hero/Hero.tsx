@@ -6,11 +6,17 @@ import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackGroundCircles from "../animation/BackGroundCircles";
 import Image from "next/image";
 import Link from "next/link";
+import { PageInfo } from "../../../typings";
+import { urlFor } from "../../../sanity";
 
-const Hero = () => {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+const Hero = ({ pageInfo }: Props) => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi , The Name's Rudransh Ahir",
+      `Hi , The Name's ${pageInfo.name}`,
       "Guy-who-loves-Cofee.tsx",
       "who-loves-Tea.jsx",
       "who-loves.Nature.py",
@@ -30,8 +36,8 @@ const Hero = () => {
         <BackGroundCircles />
         <div className="relative h-40 w-40 sm:h-32 sm:w-32 rounded-full mx-auto">
           <Image
-            className="absolute rounded-full cursor-pointer"
-            src={"/profile.jpg"}
+            className="absolute rounded-full cursor-pointer object-cover"
+            src={urlFor(pageInfo.profilePic).url()}
             alt={"profile Pic"}
             sizes={"100vw,100vh"}
             fill
