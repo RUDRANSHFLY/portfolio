@@ -1,10 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Education } from "../../../typings";
+import { urlFor } from "../../../sanity";
 
-const EducationCard = () => {
+type Props = {
+  education: Education;
+};
+
+const EducationCard = ({ education }: Props) => {
   return (
-    <article className="w-[400px] px-5 flex flex-col rounded-lg items-center sm:space-y-7 flex-shrink-0 sm:w-[500px] md:w-[600px] xl:w-[900px] sm:mt-12 snap-center xl:opacity-40 xl:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="w-[400px] border-2 shadow-xl py-2 px-5 flex flex-col rounded-lg items-center sm:space-y-7 flex-shrink-0 sm:w-[500px] md:w-[600px] xl:w-[900px] sm:mt-12 snap-center xl:opacity-40 xl:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
       <motion.img
         initial={{
           y: -100,
@@ -17,14 +23,16 @@ const EducationCard = () => {
           y: 0,
           opacity: 1,
         }}
-        src={"/ghost.jpg"}
+        src={urlFor(education?.educationImage).url()}
         alt="education-logo"
         className={"w-32 h-32 mb-10 sm:mb-0 rounded-full"}
       />
 
-      <div className={"px-0 md:px-10 space-y-4 sm:space-y-2"}>
-        <h4 className={"sm:text-4xl sm:font-light"}>CEO of GHOST</h4>
-        <p className="font-bold sm:text-2xl mt-1">GHOST</p>
+      <div className={"px-0 md:px-10 space-y-10 sm:space-y-2"}>
+        <h4 className={"sm:text-2xl sm:font-light"}>
+          {education.educationTitle}
+        </h4>
+        <p className="font-bold sm:text-xl mt-1">{education.instituteTitle}</p>
         <div className="flex space-x-2 my-2">
           <div className="relative h-10 w-10 rounded-full">
             <Image
@@ -63,7 +71,7 @@ const EducationCard = () => {
         <p className="uppercase sm:py-2 text-gray-400">
           Started work :- 1 May - now
         </p>
-        <ul className="list-disc sm:space-y-2 ml-5 sm:text-lg">
+        <ul className="list-disc sm:space-y-2 ml-5 sm:text-base">
           <li>Building Sass for Web Security and App Security</li>
           <li>Providing Lock to e-Home</li>
           <li>Cyber-Secyrity is Mvp</li>

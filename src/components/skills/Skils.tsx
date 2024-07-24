@@ -4,8 +4,13 @@ import MaxWidthWrapper from "@/helper/ui/MaxWidthWrapper";
 import SkillCard from "../cards/SkillCard";
 import { motion } from "framer-motion";
 import React from "react";
+import { Skill } from "../../../typings";
 
-const Skils = () => {
+type Props = {
+  skills: Skill[];
+};
+
+const Skils = ({ skills }: Props) => {
   return (
     <MaxWidthWrapper className="overflow-y-hidden">
       <motion.div
@@ -29,20 +34,9 @@ const Skils = () => {
         <div
           className={"absolute top-64 grid grid-cols-3 sm:grid-cols-4 gap-5"}
         >
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
+          {skills.map((skill) => (
+            <SkillCard key={skill._id} skill={skill} />
+          ))}
         </div>
       </motion.div>
     </MaxWidthWrapper>
