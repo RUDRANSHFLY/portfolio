@@ -14,12 +14,14 @@ interface Image {
 }
 
 interface PageInfo extends SanityBody {
+  name: string;
   _type: "pageInfo";
   address: string;
   backgroundInformation: string;
   email: string;
   role: string;
   heroImage: Image;
+  profilePic: Image;
   phoneNumber: string;
 }
 
@@ -32,7 +34,7 @@ interface Technology extends SanityBody {
 
 interface Skill extends SanityBody {
   _type: "skill";
-  image: Image;
+  skillImage: Image;
   progress: number;
   title: string;
 }
