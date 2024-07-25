@@ -37,10 +37,6 @@ const NavBar = ({ socials }: Props) => {
               duration: 1.5,
             }}
           >
-            {/* <SocialIcon url={"https://twitter.com/ghost_coder01"} />
-            <SocialIcon url={"https://www.instagram.com/ghost_coder01/"} />
-            <SocialIcon url={"https://github.com/RUDRANSHFLY"} />
-            <SocialIcon url={"https://discord.com/channels/@tornedo."} /> */}
             {socials?.map((social) => (
               <SocialIcon url={social.url} key={social.title} id={social._id} />
             ))}
