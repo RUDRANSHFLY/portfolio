@@ -23,8 +23,6 @@ export default async function Home() {
   const skills: Skill[] = await fetchSkills();
   const education: Education[] = await fetchEducation();
 
-  console.log(education);
-
   return (
     <div
       className={

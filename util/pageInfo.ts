@@ -1,13 +1,13 @@
+import { groq } from "next-sanity";
+import { sanityClient } from "../sanity";
 import { PageInfo } from "../typings";
 
 const fetchPageInfo = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/hella/page-info`
-  );
+  const query = groq`
+    *[_type == "pageInfo"]
+`;
 
-  const data = await res.json();
-
-  const pageInfo: PageInfo[] = data.pageInfo;
+  const pageInfo: PageInfo[] = await sanityClient.fetch(query);
 
   return pageInfo;
 };

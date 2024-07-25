@@ -1,14 +1,15 @@
 import { Social } from "../typings";
+import { sanityClient } from "../sanity";
+import { groq } from "next-sanity";
 
 const fetchSocials = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/hella/contact-info`
-  );
+  const query = groq`
+    *[_type == "social"]
+`;
 
-  const data = await res.json();
-
-  const socials: Social[] = data.socials;
+  const socials: Social[] = await sanityClient.fetch(query);
 
   return socials;
 };
+
 export { fetchSocials };

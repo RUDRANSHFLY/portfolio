@@ -1,13 +1,17 @@
+import { groq } from "next-sanity";
 import { Project } from "../typings";
+import { sanityClient } from "../sanity";
 
 const fetchProjects = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/hella/projects`
-  );
+  const query = groq`
+    *[_type == "projects"]
+`;
 
-  const data = await res.json();
+  interface Data {
+    projects: Project[];
+  }
 
-  const projects: Project[] = data.projects;
+  const projects: Data = await sanityClient.fetch(query);
 
   return projects;
 };

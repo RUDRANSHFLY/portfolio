@@ -1,13 +1,13 @@
+import { groq } from "next-sanity";
 import { Education } from "../typings";
+import { sanityClient } from "../sanity";
 
 const fetchEducation = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_SANITY_BASE_URL}/api/hella/education`
-  );
+  const query = groq`
+  *[_type == "education"]
+`;
 
-  const data = await res.json();
-
-  const education: Education[] = data.education;
+  const education: Education[] = await sanityClient.fetch(query);
 
   return education;
 };
