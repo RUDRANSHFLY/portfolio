@@ -9,8 +9,13 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from "../../../typings";
 
-const Contact = () => {
+type Props = {
+  contactInfo: PageInfo;
+};
+
+const Contact = ({ contactInfo }: Props) => {
   type Inputs = {
     name: string;
     email: string;
@@ -50,21 +55,21 @@ const Contact = () => {
                 className={"w-5 h-5 md:h-7 md:w-7 text-[#F7AB0A] animate-pulse"}
                 icon={faPhone}
               />
-              <p className="text-base">+91-9925313473</p>
+              <p className="text-base">+91-{contactInfo.phoneNumber}</p>
             </div>
             <div className={"flex items-center gap-x-5 "}>
               <FontAwesomeIcon
                 className={"w-5 h-5 md:h-7 md:w-7 text-[#F7AB0A] animate-pulse"}
                 icon={faEnvelope}
               />
-              <p className="text-base">mayamayavir@gmail.com</p>
+              <p className="text-base">{contactInfo.email}</p>
             </div>
             <div className={"flex items-center gap-x-5"}>
               <FontAwesomeIcon
                 className={"w-5 h-5 md:h-7 md:w-7 text-[#F7AB0A] animate-pulse"}
                 icon={faLocationDot}
               />
-              <p className="text-base">Space-India</p>
+              <p className="text-base">{contactInfo.address}</p>
             </div>
           </div>
 
