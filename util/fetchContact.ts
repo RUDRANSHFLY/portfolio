@@ -1,5 +1,5 @@
 import { Social } from "../typings";
-import { sanityClient } from "../sanity";
+import { sanityClient, sanityFetch } from "../sanity";
 import { groq } from "next-sanity";
 
 const fetchSocials = async () => {
@@ -7,7 +7,7 @@ const fetchSocials = async () => {
     *[_type == "social"]
 `;
 
-  const socials: Social[] = await sanityClient.fetch(query);
+  const socials: Social[] = await sanityFetch({ query });
 
   return socials;
 };
