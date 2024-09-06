@@ -46,6 +46,7 @@ interface Project extends SanityBody {
   linktoBuild: string;
   summary: string;
   technologies: Technology[];
+  livelink: string;
 }
 
 interface Education extends SanityBody {
@@ -54,6 +55,9 @@ interface Education extends SanityBody {
   instituteTitle: string;
   educationTitle: string;
   isCurrentlyEducationHere: boolean;
+  dateStart: string;
+  dateEnd: string;
+  CGPA: number;
 }
 
 interface Social extends SanityBody {
