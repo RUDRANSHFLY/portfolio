@@ -32,10 +32,16 @@ const Skils = ({ skills }: Props) => {
         </h3>
 
         <div
-          className={"absolute top-64 grid grid-cols-3 sm:grid-cols-4 gap-5"}
+          className={
+            "absolute top-64 px-5 flex flex-wrap justify-center gap-10 flex-shrink items-center"
+          }
         >
-          {skills.map((skill) => (
-            <SkillCard key={skill._id} skill={skill} />
+          {skills.map((skill, i) => (
+            <SkillCard
+              key={skill._id}
+              skill={skill}
+              directionLeft={i % 2 === 0 ? true : false}
+            />
           ))}
         </div>
       </motion.div>
