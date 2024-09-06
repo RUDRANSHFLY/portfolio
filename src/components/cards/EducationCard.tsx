@@ -10,14 +10,14 @@ type Props = {
 
 const EducationCard = ({ education }: Props) => {
   return (
-    <article className="w-[400px] border-2 shadow-xl py-2 px-5 flex flex-col rounded-lg items-center sm:space-y-7 flex-shrink-0 sm:w-[500px] md:w-[600px] xl:w-[900px] sm:mt-12 snap-center xl:opacity-40 xl:hover:opacity-100 cursor-pointer transition-opacity duration-200 overflow-hidden">
+    <article className="w-full bg-black/25 py-5 px-10 flex flex-col rounded-lg items-center sm:space-y-5 flex-shrink-0 sm:w-[400px] md:w-[500px] xl:w-[600px] sm:mt-12 snap-center  cursor-pointer transition-opacity duration-200 overflow-hidden mt-10">
       <motion.img
         initial={{
           y: -100,
           opacity: 0,
         }}
         transition={{
-          duration: 2,
+          duration: 0.5,
         }}
         whileInView={{
           y: 0,
@@ -25,60 +25,20 @@ const EducationCard = ({ education }: Props) => {
         }}
         src={urlFor(education?.educationImage).url()}
         alt="education-logo"
-        className={"w-32 h-32 mb-10 sm:mb-0 rounded-full"}
+        className={"w-28 h-28 mb-10 sm:mb-0 rounded-full"}
       />
 
-      <div className={"px-0 md:px-10 space-y-10 sm:space-y-2"}>
-        <h4 className={"sm:text-2xl sm:font-light"}>
+      <div className={"px-0 md:px-10 space-y-5 sm:space-y-2"}>
+        <h4 className={"text-xl sm:text-2xl sm:font-light"}>
           {education.educationTitle}
         </h4>
         <p className="font-bold sm:text-xl mt-1">{education.instituteTitle}</p>
-        <div className="flex space-x-2 my-2">
-          <div className="relative h-10 w-10 rounded-full">
-            <Image
-              src={
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFa_KSt14fKl9JBEH-Z5GDHoguHVHKVHvEVPm9nSILjw&s"
-              }
-              fill
-              sizes={"100vw,100vh"}
-              alt="education-logo"
-              className="absolute"
-            />
-          </div>
-          <div className="relative h-10 w-10 rounded-full">
-            <Image
-              src={
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFa_KSt14fKl9JBEH-Z5GDHoguHVHKVHvEVPm9nSILjw&s"
-              }
-              fill
-              sizes={"100vw,100vh"}
-              alt="education-logo"
-              className="absolute"
-            />
-          </div>
-          <div className="relative h-10 w-10 rounded-full">
-            <Image
-              src={
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFa_KSt14fKl9JBEH-Z5GDHoguHVHKVHvEVPm9nSILjw&s"
-              }
-              fill
-              sizes={"100vw,100vh"}
-              alt="education-logo"
-              className="absolute"
-            />
-          </div>
-        </div>
-        <p className="uppercase sm:py-2 text-gray-400">
-          Started work :- 1 May - now
+        <div className="flex space-x-2 my-2"></div>
+        <p className="sm:py-2 text-gray-400">
+          {education.dateStart}-
+          {education.isCurrentlyEducationHere ? "now" : education.dateEnd}
         </p>
-        <ul className="list-disc sm:space-y-2 ml-5 sm:text-base">
-          <li>Building Sass for Web Security and App Security</li>
-          <li>Providing Lock to e-Home</li>
-          <li>Cyber-Secyrity is Mvp</li>
-          <li>
-            Making for all type of electronic devices where it rquire Software
-          </li>
-        </ul>
+        <p>CGPA : {education.CGPA}</p>
       </div>
     </article>
   );
