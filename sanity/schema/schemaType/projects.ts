@@ -39,5 +39,11 @@ export default defineType({
       description: "Live Link Of the Project",
       type: "text",
     }),
+    defineField({
+      name: "codelink",
+      title: "CodeLink",
+      description: "Code Link Of the Project",
+      type: "text",
+    }),
   ],
 });
