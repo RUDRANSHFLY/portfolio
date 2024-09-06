@@ -51,11 +51,11 @@ const Contact = ({ contactInfo }: Props) => {
           </h4>
           <div className="space-y-2 mx-auto">
             <div className={"flex items-center gap-x-5"}>
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 className={"w-5 h-5 md:h-7 md:w-7 text-[#F7AB0A] animate-pulse"}
                 icon={faPhone}
               />
-              <p className="text-base">+91-{contactInfo.phoneNumber}</p>
+              <p className="text-base">+91-{contactInfo.phoneNumber}</p> */}
             </div>
             <div className={"flex items-center gap-x-5 "}>
               <FontAwesomeIcon
