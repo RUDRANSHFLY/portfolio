@@ -25,7 +25,7 @@ const About = ({ pageInfo }: Props) => {
           duration: 2,
         }}
         className={
-          "relative h-screen flex flex-col text-center md:text-left md:flex-row justify-evenly items-center px-10 mx-auto"
+          "relative h-screen flex flex-col text-center md:text-left md:flex-row justify-center space-y-10 items-center px-10 mx-auto"
         }
       >
         <h3 className="heroTitle">About</h3>
