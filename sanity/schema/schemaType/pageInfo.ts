@@ -31,11 +31,7 @@ export default defineType({
         hotspot: true,
       },
     }),
-    defineField({
-      name: "phoneNumber",
-      title: "PhoneInformation",
-      type: "string",
-    }),
+
     defineField({
       name: "email",
       title: "Email",
