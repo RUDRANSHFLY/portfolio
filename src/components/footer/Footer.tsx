@@ -4,7 +4,7 @@ import React from "react";
 
 export const Footer = () => {
   return (
-    <footer className={"sticky bottom-5 w-full cursor-pointer"}>
+    <footer className={"sticky bottom-20 sm:bottom-5 w-full cursor-pointer"}>
       <Link href={"#mainHero"}>
         <div>
           <div className={"relative w-10 h-10 mx-auto"}>
