@@ -9,19 +9,21 @@ import Projects from "@/components/hero/Projects";
 import NavBar from "@/components/nav/NavBar";
 import Skils from "@/components/skills/Skils";
 
-import { Education, PageInfo, Skill, Social } from "../../typings";
+import { Education, PageInfo, Project, Skill, Social } from "../../typings";
 
 // ! fetch API
 import { fetchSocials } from "../../util/fetchContact";
-import { fetchPageInfo } from "../../util/pageInfo";
+import { fetchPageInfo } from "../../util/fetchPageInfo";
 import { fetchSkills } from "../../util/fetchSkills";
 import { fetchEducation } from "../../util/fetchEducation";
+import { fetchProjects } from "../../util/fetchProjects";
 
 export default async function Home() {
   const soicals: Social[] = await fetchSocials();
   const pageInfos: PageInfo[] = await fetchPageInfo();
   const skills: Skill[] = await fetchSkills();
   const education: Education[] = await fetchEducation();
+  const projects: Project[] = await fetchProjects();
 
   return (
     <div
@@ -43,10 +45,10 @@ export default async function Home() {
         <Skils skills={skills} />
       </section>
       <section id="projects" className={"snap-center"}>
-        <Projects />
+        <Projects projects={projects} />
       </section>
       <section id="contact-us" className={"snap-start"}>
-        <Contact />
+        <Contact contactInfo={pageInfos[0]} />
       </section>
       <Footer />
     </div>
