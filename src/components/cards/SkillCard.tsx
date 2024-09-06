@@ -12,7 +12,7 @@ type Props = {
 const SkillCard = ({ directionLeft, skill }: Props) => {
   return (
     <motion.div
-      className={"group relative flex cursor-pointer"}
+      className={"relative flex cursor-pointer"}
       initial={{
         opacity: 0,
         x: directionLeft ? -100 : 100,
@@ -25,22 +25,17 @@ const SkillCard = ({ directionLeft, skill }: Props) => {
         duration: 1.5,
       }}
     >
-      <div className={"relative w-20 h-20 sm:w-38 sm::h-38"}>
+      <div
+        className={
+          "w-12 h-12 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20  xl:w-24 xl:h-24"
+        }
+      >
         <Image
           src={urlFor(skill.skillImage).url()}
           fill
-          className={
-            "absolute p-1 rounded-full border border-gray-500 object-fill filter group-hover:grayscale transition duration-300 ease-in-out"
-          }
+          className={"absolute rounded-sm transition duration-300 ease-in-out"}
           alt="skill"
         />
-      </div>
-      <div className="absolute opacity-0 group-hover:opacity-80 transistion duration-300 ease-in-out group-hover:bg-white w-20 h-20 sm:w-38 sm::h-38 rounded-full text-center flex justify-center items-center ">
-        <div className="flex items-center h-full">
-          <p className="xl:text-2xl font-bold text-black opacity-100 ">
-            {skill.progress}
-          </p>
-        </div>
       </div>
     </motion.div>
   );
