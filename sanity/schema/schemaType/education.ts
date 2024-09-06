@@ -43,10 +43,10 @@ export default defineType({
       type: "boolean",
     }),
     defineField({
-      name: "techno",
-      title: "TechNo",
-      type: "array",
-      of: [{ type: "reference", to: { type: "skills" } }],
+      name: "CGPA",
+      title: "CGPA",
+      type: "number",
+      validation: (Rule) => Rule.min(0).max(10),
     }),
   ],
 });
