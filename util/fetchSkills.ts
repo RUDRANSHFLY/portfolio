@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { sanityClient } from "../sanity";
+import { sanityFetch } from "../sanity";
 import { Skill } from "../typings";
 
 const fetchSkills = async () => {
@@ -7,7 +7,7 @@ const fetchSkills = async () => {
   *[_type == "skills"]
 `;
 
-  const skills: Skill[] = await sanityClient.fetch(query);
+  const skills: Skill[] = await sanityFetch({ query });
 
   return skills;
 };
