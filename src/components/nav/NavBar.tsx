@@ -14,7 +14,7 @@ type Props = {
 
 const NavBar = ({ socials }: Props) => {
   return (
-    <header id="header" className="sticky top-0 z-50 pt-12 p-5">
+    <header id="header" className="sticky top-8 z-50 pt-1 px-5">
       <MaxWidthWrapper className="flex justify-center sm:block">
         <div
           id="mainNav"
@@ -38,7 +38,12 @@ const NavBar = ({ socials }: Props) => {
             }}
           >
             {socials?.map((social) => (
-              <SocialIcon url={social.url} key={social.title} id={social._id} />
+              <SocialIcon
+                url={social.url}
+                key={social.title}
+                id={social._id}
+                style={{ height: 50, width: 50 }}
+              />
             ))}
           </motion.div>
 
