@@ -16,14 +16,22 @@ const Projects = ({ projects }: Props) => {
     <MaxWidthWrapper className={"max-w-full"}>
       <div
         className={
-          "h-screen relative flex flex-col text-left md:flex-row justify-evenly items-center z-0 pb-20"
+          "h-screen w-screen relative flex flex-col text-center justify-center md:flex-row items-center z-0"
         }
       >
-        <h1 className={"heroTitle"}>Projects</h1>
+        <div>
+          <h1
+            className={
+              "absolute w-screen top-28 tracking-widest  sm:tracking-[5px] text-white sm:text-gray-500 text-lg sm:text-2xl uppercase mx-auto"
+            }
+          >
+            Projects
+          </h1>
+        </div>
 
         <div
           className={
-            "relative w-full h-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-500 "
+            " w-full h-screen flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollb z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-500 "
           }
         >
           {projects.map((project, i) => (

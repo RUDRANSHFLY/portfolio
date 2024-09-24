@@ -16,7 +16,7 @@
   }
 
   .heroTitle {
-    @apply absolute top-28 tracking-widest  sm:tracking-[20px] text-white sm:text-gray-500 text-lg sm:text-2xl uppercase mx-auto;
+    @apply absolute top-28 tracking-widest  sm:tracking-[10px] text-white sm:text-gray-500 text-lg sm:text-2xl uppercase mx-auto;
   }
 
   .contact-Input {

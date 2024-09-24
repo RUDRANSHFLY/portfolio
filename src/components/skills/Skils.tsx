@@ -33,7 +33,7 @@ const Skils = ({ skills }: Props) => {
 
         <div
           className={
-            "absolute top-64 px-5 flex flex-wrap justify-center gap-10 flex-shrink items-center"
+            "absolute top-64 px-10 sm:px-5 flex flex-wrap justify-center gap-5 sm:gap-10 flex-shrink items-center"
           }
         >
           {skills.map((skill, i) => (
